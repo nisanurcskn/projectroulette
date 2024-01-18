@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Roulette</title>
+    <link href="stylee.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="topnav">
+        <img src="images/logo Kopie.png" class="logo">
+        <a href="???.html"> ? </a>
+      </div>
+<div class="container">
+    
+
+    <div class="content">
+        <p>CONFIDENTIAL</p>
+        <h1> <span>Coming</span> Soon</h1>
+        <div class="launch-time">
+           
+            <div>
+                <p id="Tage">00</p>
+                <span>Tage</span>            </div>
+            <div>
+                <p id="Stunden">00</p>
+                <span>Stunden</span>
+            </div>
+            <div>
+                <p id="Minuten">00</p>
+                <span>Minuten</span>
+            </div>
+            <div>
+                <p id="Sekunden">00</p>
+                <span>Seconds</span>
+            </div>
+        </div> 
+     
+    </div>
+    
+    <h1> CONFIDENTIAL</h1>
+</div>
+
+<script>
+    var countDownDate = new Date("Jul 17, 2024 00:00:00").getTime();
+    var x = setInterval(function(){
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        var Tage = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var Stunden = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var Minuten = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var Sekunden = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("Tage").innerHTML = Tage;
+        document.getElementById("Stunden").innerHTML = Stunden;
+        document.getElementById("Minuten").innerHTML = Minuten;
+        document.getElementById("Sekunden").innerHTML = Sekunden;
+
+        if(distance < 0){
+            clearInterval(x);
+            document.getElementById("Tage").innerHTML = "00";
+            document.getElementById("Stunden").innerHTML = "00";
+            document.getElementById("Minuten").innerHTML = "00";
+            document.getElementById("Sekunden").innerHTML = "00";
+        }
+
+    },1000);
+
+
+</script>
+<a href="???.html"> ? </a>
+
+
+</body>
+</html>
