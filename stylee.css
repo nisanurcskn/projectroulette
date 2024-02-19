@@ -50,9 +50,8 @@ h1.source-code-pro {
 }
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
+    font-family: "Source Code Pro", monospace;
+} 
   .topnav {
     overflow: hidden;
     background-color: #333;
