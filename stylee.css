@@ -37,6 +37,11 @@ h1.source-code-pro {
     font-size: 64px;
     font-weight: 600;
 }
+.content p{
+  font-family: "Source Code Pro", monospace;
+    font-size: 30px;
+    font-weight: 300;
+}
 .launch-time{
     display: flex;
 }
