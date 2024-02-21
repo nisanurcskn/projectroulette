@@ -5,13 +5,10 @@ h1.source-code-pro {
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
-
 }
 .a{
     font-size: 100pt;
 }
-
-
 .container{
     width: 100vw;
     height: 100vh;
