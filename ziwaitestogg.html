@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klickbare Karte</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+        .room {
+            cursor: pointer;
+            fill: rgba(0, 0, 255, 0.3); /* Transparente Füllung für klickbare Bereiche */
+            transition: fill 0.2s;
+        }
+        .room:hover {
+            fill: rgba(0, 0, 255, 0.5); /* Hellere Füllung beim Hover */
+        }
+        .room.active {
+            fill: rgba(255, 255, 255, 0.21); /* Weiß mit 21% Deckkraft */
+        }
+        .cls-2 {
+            stroke: #00f4f4;
+            stroke-width: 2;
+            fill: none;
+        }
+        .floating-image {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% {
+                box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+                transform: translateY(0px);
+            }
+            50% {
+                box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+                transform: translateY(-20px);
+            }
+            100% {
+                box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Klickbare Karte</h1>
+    <div id="map-container">
+        <svg id="zweites-geschoss" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 865.22 400.23">
+            <defs>
+                <style>
+                    .cls-1 { fill: #143f51; }
+                    .cls-1, .cls-2, .cls-3 { stroke: #00f4f4; stroke-miterlimit: 10; stroke-width: 2px; }
+                    .cls-2 { fill: none; }
+                    .cls-4, .cls-5 { stroke-width: 0px; }
+                    .cls-6 { font-family: SourceCodeProRoman-Regular, 'Source Code Pro'; font-size: 9px; font-variation-settings: 'wght' 400; }
+                    .cls-6, .cls-5 { fill: #fff; }
+                </style>
+            </defs>
+
+            <!-- Hier werden die Räume eingefügt -->
+            <path class="cls-1" d="m834.17,0.55c-278.05,27.86 -556.11,55.72 -834.17,83.58c13.88,103.22 27.76,206.44 41.64,309.66c263.33,2.33 526.67,4.67 790,7c0.84,-133.41 1.68,-266.82 2.53,-400.23l0,-0.01z" id="svg_1" transform="matrix(1 0 0 1 0 0)"/>
+            <path class="cls-4" d="m834.17,0c-278.06,27.86 -556.11,55.72 -834.17,83.58c13.88,103.22 27.76,206.44 41.64,309.66c263.33,2.33 526.67,4.67 790,7c0.84,-133.41 1.68,-266.82 2.53,-400.23l0,-0.01z" id="svg_1" transform="matrix(1 0 0 1 0 0)"/>
+            <path class="cls-3" d="m610.06,280l-133.5,-1.13l-133.5,-1.13l-1.03,-36.81l-1.03,-36.81l133.5,-16.62l133.5,-16.62l1.02,54.57l1.02,54.57l0.02,-0.02z" id="svg_57"/>
+            <path id="room1" class="cls-1 room" d="m695.73,395.58v-28h-29v28h29Z"/>
+            <path id="bb_202" class="cls-1 room" d="m299.38,392.96c-1-25.67-2-51.33-3-77-51.25-.24-102.49-.49-153.74-.73,3.58,25.24,7.16,50.49,10.74,75.73,48.67.67,97.33,1.33,146,2Z"/>
+            <path id="bb.2t1" class="cls-1 room" d="m695.73,364.58c-10.57.07-21.13.13-31.7.2-.1,10.27-.2,20.53-.3,30.8h-49v-75h81v44Z"/>
+            <path id="room4" class="cls-1 room" d="m671.73,324.58v18h-33v20h-20v-38h53Z"/>
+            <path id="bb_209" class="cls-1 room" d="m168.64,175.23c-5.45-34.28-10.9-68.57-16.35-102.85,59.45-6.05,118.9-12.1,178.35-18.15,4.33,34.67,8.67,69.33,13,104-58.33,5.67-116.67,11.33-175,17Z"/>
+            <path id="bb_210" class="cls-1 room" d="m496.64,37.23c-53.97,5.45-107.94,10.9-161.91,16.35,4.3,34.88,8.61,69.77,12.91,104.65,53.67-5.67,107.33-11.33,161-17-4-34.67-8-69.33-12-104Z"/>
+            <path id="bb_208" class="cls-1 room" d="m109.64,266.23c-9.16-62.71-18.31-125.42-27.47-188.13-26.15,2.83-52.3,5.65-78.45,8.48,8.3,61.55,16.61,123.1,24.91,184.65,27-1.67,54-3.33,81-5Z"/>
+            <path id="aufzug links" class="cls-1 room" d="m279.73,248.58c-13,.67-26,1.33-39,2,.67,7.11,1.33,14.23,2,21.34,13-.11,26-.23,39-.34-.67-7.67-1.33-15.33-2-23Z"/>
+            <path id="aufzug rechts" class="cls-1 room" d="m692.66,276.25l.37-20c-11.33-.21-22.66-.41-33.99-.62-.12,6.67-.24,13.33-.37,20,11.33.21,22.66.41,33.99.62Z"/>
+            <path id="WC H links" class="cls-1 room" d="m138.64,276.23c-2.64-18.22-5.27-36.44-7.91-54.65,18-1.67,36-3.33,54-5,1.62,19.04,3.25,38.07,4.87,57.11-16.99.85-33.97,1.69-50.96,2.54Z"/>
+            <path id="WC D links" class="cls-1 room" d="m193.73,273.58c-1.53-19.17-3.06-38.34-4.59-57.52,14.53-1.49,29.06-2.99,43.59-4.48,2,20.33,4,40.67,6,61-15,.33-30,.67-45,1Z"/>
+            <path id="bb_224" class="cls-1 room" d="m236.73,211.58c1.33,11.67,2.67,23.33,4,35,13-.67,26-1.33,39-2-1-12.33-2-24.67-3-37-13.33,1.33-26.67,2.67-40,4Z"/>
+            <path id="wc h rechts" class="cls-1 room" d="m720.77,215.79c-20.68-.07-41.36-.14-62.04-.21v-44c11.93.91,23.86,1.82,35.79,2.72-.05,2.67-.1,5.33-.15,8,8.99.5,17.98,1,26.98,1.49-.19,10.66-.39,21.33-.58,31.99Z"/>
+            <path id="wc d rechts" class="cls-1 room" d="m658.89,251.66l-.16-32.09c20.49.07,40.99.13,61.48.2-.19,11.15-.38,22.3-.57,33.45-20.25-.52-40.5-1.05-60.75-1.57Z"/>
+            <path id="bb_207" class="cls-1 room" d="m115.64,305.23l-6-36c-27,1.67-54,3.33-81,5l6,36c27-1.67,54-3.33,81-5Z"/>
+            <path id="bb_206" class="cls-1 room" d="m121.64,343.23c-2-11.67-4-23.33-6-35-27,1.67-54,3.33-81,5,1.6,10.86,3.2,21.71,4.8,32.57,27.4-.86,54.8-1.71,82.2-2.57Z"/>
+            <path id="bb_205" class="cls-1 room" d="m127.64,390.23c-2-14.67-4-29.33-6-44-27.33,1-54.67,2-82,3,1.67,13.33,3.33,26.67,5,40,27.67.33,55.33.67,83,1Z"/>
+            <path id="bb_203" class="cls-1 room" d="m454.64,319.23c.67,25,1.33,50,2,75-51-.67-102-1.33-153-2-1-25.33-2-50.67-3-76,51.33,1,102.67,2,154,3Z"/>
+            <path id="bb_202" class="cls-1 room" d="m609.64,320.23c.14,25.06.28,50.13.42,75.19-49.47-.4-98.95-.79-148.42-1.19-.67-25-1.33-50-2-75,50,.33,100,.67,150,1Z"/>
+            <path id="bb_211" class="cls-1 room" d="m662.21,20.08c-53.97,5.45-107.94,10.9-161.91,16.35,4.3,34.88,8.61,69.77,12.91,104.65,53.67-5.67,107.33-11.33,161-17-4-34.67-8-69.33-12-104Z"/>
+            <path id="bb.2t2" class="cls-1 room" d="m146.73,72.58c-20.33,1.63-40.67,3.25-61,4.88,5.35,35.93,10.69,71.85,16.04,107.78,6.33-.65,12.67-1.3,19-1.95-.33-3.27-.67-6.53-1-9.8,13.67-1.63,27.33-3.26,41-4.88-4.68-32.01-9.36-64.01-14.04-96.02Z"/>
+            <path id="treppe" class="cls-1 room" d="m568.73,275.54c-.36-30.44-.73-60.87-1.09-91.31h33c.36,30.5.73,61.01,1.09,91.51-11-.07-22-.13-33-.2Z"/>
+            <path id="bb_201" class="cls-1 room" d="m828.96,322.77c.56,25.15,1.12,50.31,1.68,75.46-43.42-.76-86.84-1.51-130.26-2.27v-75c42.86.6,85.72,1.2,128.58,1.81Z"/>
+            <path id="bb_218" class="cls-1 room" d="m831.64,278.23c-21.33-.67-42.67-1.33-64-2v-48c21.33.67,42.67,1.33,64,2v48Z"/>
+            <path id="bb_217" class="cls-1 room" d="m831.64,225.23v-37c-21.33-.67-42.67-1.33-64-2v38c21.33.33,42.67.67,64,1Z"/>
+            <path id="bb_216" class="cls-1 room" d="m831.64,184.23v-36c-21.33-.67-42.67-1.33-64-2v36c21.33.67,42.67,1.33,64,2Z"/>
+            <path id="bb_215" class="cls-1 room" d="m831.64,144.23v-41.86c-21.33-.71-42.67-1.43-64-2.14v42c21.33.67,42.67,1.33,64,2Z"/>
+            <path id="bb_214" class="cls-1 room" d="m831.64,98.23v-37.47c-21.33-.51-42.67-1.02-64-1.53v37c21.33.67,42.67,1.33,64,2Z"/>
+            <path id="bb_213" class="cls-1 room" d="m831.64,57.23V3.34c-21.33,1.96-42.67,3.93-64,5.89v46c21.33.67,42.67,1.33,64,2Z"/>
+            <path id="bb_212" class="cls-1 room" d="m665.64,20.23c4,34.67,8,69.33,12,104,15.67-.67,31.33-1.33,47-2V14.23c-19.67,2-39.33,4-59,6Z"/>
+            <line id="svg_58" class="cls-2" x1="568.73" y1="265.58" x2="601.73" y2="265.58"/>
+
+            <rect class="cls-3" x="113.73" y="103.38" width="21" height="54" transform="translate(265.15 242.49) rotate(172.12)"/>
+            
+            <!-- Treppenlinien für BB.2T1 -->
+            <line class="cls-2" x1="627.73" y1="333.58" x2="671.73" y2="334.58"/>
+            <line class="cls-2" x1="666.73" y1="342.58" x2="666.73" y2="325.58"/>
+            <line class="cls-2" x1="661.73" y1="342.58" x2="661.73" y2="325.58"/>
+            <line class="cls-2" x1="656.73" y1="342.58" x2="656.73" y2="325.58"/>
+            <line class="cls-2" x1="651.73" y1="342.58" x2="651.73" y2="325.58"/>
+            <line class="cls-2" x1="646.73" y1="342.58" x2="646.73" y2="324.58"/>
+            <line class="cls-2" x1="642.73" y1="342.58" x2="642.73" y2="325.58"/>
+            <line class="cls-2" x1="638.73" y1="342.58" x2="638.73" y2="324.58"/>
+            <line class="cls-2" x1="638.73" y1="342.58" x2="619.73" y2="342.58"/>
+            <line class="cls-2" x1="628.73" y1="333.58" x2="628.73" y2="362.58"/>
+            <line class="cls-2" x1="618.73" y1="346.58" x2="638.73" y2="346.58"/>
+            <line class="cls-2" x1="618.73" y1="350.58" x2="638.73" y2="350.58"/>
+            <line class="cls-2" x1="618.73" y1="354.58" x2="638.73" y2="354.58"/>
+            <line class="cls-2" x1="618.73" y1="358.58" x2="638.73" y2="358.58"/>
+
+            <!-- Treppenlinien für BB.2T2 -->
+            <line class="cls-2" x1="243.73" y1="271.58" x2="278.73" y2="249.58"/>
+            <line class="cls-2" x1="240.73" y1="250.58" x2="281.73" y2="270.58"/>
+            <line class="cls-2" x1="658.73" y1="255.58" x2="692.73" y2="276.58"/>
+            <line class="cls-2" x1="658.73" y1="275.58" x2="692.73" y2="256.58"/>
+            <line class="cls-2" x1="119.73" y1="166.58" x2="149.73" y2="162.58"/>
+            <line class="cls-2" x1="117.73" y1="158.58" x2="119.73" y2="174.58"/>
+            <line class="cls-2" x1="122.73" y1="157.58" x2="124.73" y2="173.58"/>
+            <line class="cls-2" x1="128.59" y1="157.72" x2="130.73" y2="172.58"/>
+            <line class="cls-2" x1="133.73" y1="156.58" x2="135.59" y2="171.72"/>
+            <line class="cls-2" x1="138.59" y1="155.72" x2="140.73" y2="171.58"/>
+            <line class="cls-2" x1="137.73" y1="155.58" x2="158.73" y2="152.58"/>
+            <line class="cls-2" x1="137.73" y1="150.58" x2="157.73" y2="147.58"/>
+            <line class="cls-2" x1="136.73" y1="145.58" x2="156.73" y2="142.58"/>
+            <line class="cls-2" x1="136.73" y1="140.58" x2="155.73" y2="137.58"/>
+            <line class="cls-2" x1="135.73" y1="135.58" x2="155.73" y2="132.58"/>
+            <line class="cls-2" x1="134.73" y1="130.58" x2="154.73" y2="127.58"/>
+            <line class="cls-2" x1="149.73" y1="163.58" x2="140.73" y2="103.58"/>
+            <line class="cls-2" x1="133.73" y1="125.58" x2="153.73" y2="122.58"/>
+            <line class="cls-2" x1="133.73" y1="120.58" x2="152.73" y2="117.58"/>
+            <line class="cls-2" x1="132.73" y1="115.58" x2="152.73" y2="112.58"/>
+            <line class="cls-2" x1="131.73" y1="110.58" x2="151.73" y2="107.58"/>
+            <line class="cls-2" x1="131.73" y1="105.58" x2="150.73" y2="102.58"/>
+            <line class="cls-2" x1="568.73" y1="270.58" x2="600.73" y2="270.58"/>
+            <line class="cls-2" x1="568.73" y1="265.58" x2="601.73" y2="265.58"/>
+            <line class="cls-2" x1="568.73" y1="260.58" x2="601.73" y2="260.58"/>
+            <line class="cls-2" x1="568.73" y1="255.58" x2="600.73" y2="255.58"/>
+            <line class="cls-2" x1="568.64" y1="245.23" x2="600.73" y2="245.58"/>
+            <line class="cls-2" x1="584.73" y1="275.58" x2="583.64" y2="184.23"/>
+            <line class="cls-2" x1="600.64" y1="229.23" x2="568.64" y2="229.23"/>
+            <line class="cls-2" x1="600.64" y1="224.23" x2="568.64" y2="224.23"/>
+            <line class="cls-2" x1="568.64" y1="219.23" x2="600.64" y2="219.23"/>
+            <line class="cls-2" x1="600.64" y1="214.23" x2="568.64" y2="214.23"/>
+            <line class="cls-2" x1="568.64" y1="209.23" x2="600.64" y2="209.23"/>
+            <line class="cls-2" x1="567.64" y1="204.23" x2="600.64" y2="204.23"/>
+            <line class="cls-2" x1="567.64" y1="189.23" x2="600.64" y2="189.23"/>
+            <line class="cls-2" x1="567.64" y1="194.23" x2="600.64" y2="194.23"/>
+            <line class="cls-2" x1="567.64" y1="199.23" x2="600.64" y2="199.23"/>
+            <line class="cls-2" d="m568.64,250.23c11.03.12,22.06.23,33.09.35"/>
+
+            <!-- Texte -->
+            <text class="cls-6" transform="translate(202.23 362.99)"><tspan x="0" y="0">BB.204</tspan></text>
+            <text class="cls-6" transform="translate(649.67 355.68)"><tspan x="0" y="0">BB.2T1</tspan></text>
+            <text class="cls-6" transform="translate(231.45 119.88)"><tspan x="0" y="0">BB.209</tspan></text>
+            <text class="cls-6" transform="translate(408.69 102.89)"><tspan x="0" y="0">BB.210</tspan></text>
+            <text class="cls-6" transform="translate(37.31 181.39)"><tspan x="0" y="0">BB.208</tspan></text>
+            <text class="cls-6" transform="translate(242.7 231.08)"><tspan x="0" y="0">BB.224</tspan></text>
+            <text class="cls-6" transform="translate(56.67 292.37)"><tspan x="0" y="0">BB.207</tspan></text>
+            <text class="cls-6" transform="translate(61.67 329.37)"><tspan x="0" y="0">BB.206</tspan></text>
+            <text class="cls-6" transform="translate(65.67 373.37)"><tspan x="0" y="0">BB.205</tspan></text>
+            <text class="cls-6" transform="translate(361.67 362.37)"><tspan x="0" y="0">BB.203</tspan></text>
+            <text class="cls-6" transform="translate(520.67 362.37)"><tspan x="0" y="0">BB.202</tspan></text>
+            <text class="cls-6" transform="translate(561.82 86.92)"><tspan x="0" y="0">BB.211</tspan></text>
+            <text class="cls-6" transform="translate(99.17 94.74)"><tspan x="0" y="0">BB.2T2</tspan></text>
+            <text class="cls-6" transform="translate(746.3 362.55)"><tspan x="0" y="0">BB.201</tspan></text>
+            <text class="cls-6" transform="translate(783.3 256.55)"><tspan x="0" y="0">BB.218</tspan></text>
+            <text class="cls-6" transform="translate(781.3 207.55)"><tspan x="0" y="0">BB.217</tspan></text>
+            <text class="cls-6" transform="translate(781.3 167.55)"><tspan x="0" y="0">BB.216</tspan></text>
+            <text class="cls-6" transform="translate(781.99 124.55)"><tspan x="0" y="0">BB.215</tspan></text>
+            <text class="cls-6" transform="translate(783.55 80.63)"><tspan x="0" y="0">BB.214</tspan></text>
+            <text class="cls-6" transform="translate(781.69 37.04)"><tspan x="0" y="0">BB.213</tspan></text>
+            <text class="cls-6" transform="translate(680.57 78.18)"><tspan x="0" y="0">BB.212</tspan></text>
+            <text class="cls-6" transform="translate(649.67 355.68)"><tspan x="0" y="0">BB.2T1</tspan></text>
+            <text class="cls-6" transform="translate(147.780029296875 253.76998901367188)"><tspan x="0" y="0">WC H</tspan></text>
+            <text class="cls-6" transform="translate(200.780029296875 249.76998901367188)"><tspan x="0" y="0">WC D</tspan></text>
+            <text class="cls-6" transform="translate(674.780029296875 202.76998901367188)"><tspan x="0" y="0">WC H</tspan></text>
+            <text class="cls-6" transform="translate(675.780029296875 238.76998901367188)"><tspan x="0" y="0">WC D</tspan></text>
+        </svg>
+    </div>
+
+    <img src="postkarte.png" alt="Profilbild" class="floating-image" id="profilbild_bb_202">
+    <img src="redrum.png" alt="Profilbild" class="floating-image" id="profilbild_bb_203">
+    <img src="trolerak.png" alt="Profilbild" class="floating-image" id="profilbild_bb_209">
+    <img src="altek.PNG" alt="Profilbild" class="floating-image" id="profilbild_bb_210">
+    <img src="baike.png" alt="Profilbild" class="floating-image" id="profilbild_bb_211">
+
+    <script>
+        document.querySelectorAll('.room').forEach(room => {
+            room.addEventListener('click', () => {
+                document.querySelectorAll('.room').forEach(r => r.classList.remove('active'));
+                room.classList.add('active');
+            });
+        });
+
+        // Profilbilder für die Räume positionieren
+        const profileImages = [
+            { img: document.getElementById('profilbild_bb_202'), room: document.getElementById('bb_202') },
+            { img: document.getElementById('profilbild_bb_203'), room: document.getElementById('bb_203') },
+            { img: document.getElementById('profilbild_bb_209'), room: document.getElementById('bb_209') },
+            { img: document.getElementById('profilbild_bb_210'), room: document.getElementById('bb_210') },
+            { img: document.getElementById('profilbild_bb_211'), room: document.getElementById('bb_211') },
+        ];
+
+        function positionProfileImages() {
+            profileImages.forEach(({ img, room }) => {
+                const roomRect = room.getBoundingClientRect();
+                const mapContainerRect = document.getElementById('map-container').getBoundingClientRect();
+
+                // Position des Profilbilds relativ zum Raum
+                img.style.top = `${roomRect.top - mapContainerRect.top + window.scrollY + roomRect.height / 1 - img.offsetHeight / 2}px`;
+                img.style.left = `${roomRect.left - mapContainerRect.left + window.scrollX + roomRect.width / 2 - img.offsetWidth / 2}px`;
+            });
+        }
+
+        // Bilder nach dem Laden positionieren
+        window.addEventListener('load', positionProfileImages);
+        // Bilder neu positionieren, wenn die Seite skaliert oder die Fenstergröße geändert wird
+        window.addEventListener('resize', positionProfileImages);
+    </script>
+</body>
+</html>
