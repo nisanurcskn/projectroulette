@@ -220,7 +220,7 @@
                 const mapContainerRect = document.getElementById('map-container').getBoundingClientRect();
 
                 // Position des Profilbilds relativ zum Raum
-                img.style.top = `${roomRect.top - mapContainerRect.top + window.scrollY + roomRect.height / 1 - img.offsetHeight / 2}px`;
+                img.style.top = `${roomRect.top - mapContainerRect.top + window.scrollY + roomRect.height / 1 - img.offsetHeight / 1}px`;
                 img.style.left = `${roomRect.left - mapContainerRect.left + window.scrollX + roomRect.width / 2 - img.offsetWidth / 2}px`;
             });
         }
