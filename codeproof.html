@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rätsel Nummerncode</title>
+    <style>
+        body {
+            font-family: 'SourceCodePrp.tff', monospace ;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .input-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .input-container input {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+            margin: 0 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Errate den Code</h1>
+        <div class="input-container">
+            <input type="number" id="digit1" min="0" max="9" maxlength="1">
+            <input type="number" id="digit2" min="0" max="9" maxlength="1">
+            <input type="number" id="digit3" min="0" max="9" maxlength="1">
+            <input type="number" id="digit4" min="0" max="9" maxlength="1">
+        </div>
+        <button onclick="checkCode()">Überprüfen</button>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        const correctCode = [3, 1, 0, 7]; // Ändere diesen Code nach Bedarf
+
+        function checkCode() {
+            const digit1 = document.getElementById('digit1').value;
+            const digit2 = document.getElementById('digit2').value;
+            const digit3 = document.getElementById('digit3').value;
+            const digit4 = document.getElementById('digit4').value;
+
+            const userCode = [digit1, digit2, digit3, digit4];
+
+            if (userCode.join('') === correctCode.join('')) {
+                window.location.href = 'uf.html'; // Zielseite
+            } else {
+                document.getElementById('message').textContent = 'Falscher Code. Bitte versuche es erneut.';
+            }
+        }
+    </script>
+</body>
+</html>
