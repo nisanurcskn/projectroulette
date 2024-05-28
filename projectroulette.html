@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Roulette</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <style>
         body {
@@ -50,10 +51,11 @@
         .nav-links ul li a:hover {
             color: #dedede;
         }
-        .fa {
+        .fa-bars, .fa-close {
             color: #fff;
             font-size: 20px;
             cursor: pointer;
+            display: none;
         }
         .text-box {
             position: absolute;
@@ -100,17 +102,14 @@
         .course, .campus, .facility, .testimonials, .cta, .footer {
             padding: 50px 0;
             text-align: center;
-            font-family: 'SourceCodePro.tff', monospace;
         }
         .course h1, .campus h1, .facility h1, .testimonials h1, .cta h1, .footer h4 {
             margin-bottom: 20px;
-            font-family: 'SourceCodePro.tff', monospace;
         }
         .course .row, .campus .row, .facility .row, .testimonials .row {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            font-family: 'SourceCodePro.tff', monospace;
         }
         .course-col, .campus-col, .facility-col, .testimonial-col {
             flex-basis: 30%;
@@ -140,7 +139,6 @@
             border-radius: 10px;
             opacity: 0;
             transition: opacity 0.3s;
-            font-family: 'SourceCodePro.tff', monospace;
         }
         .campus-col:hover .layer, .facility-col:hover .layer {
             opacity: 1;
@@ -156,13 +154,41 @@
         .footer .icons a:hover {
             color: #4CAF50;
         }
+        @media (max-width: 768px) {
+            .nav-links ul {
+                flex-direction: column;
+                position: fixed;
+                background: #333;
+                width: 100%;
+                height: 100vh;
+                top: 0;
+                right: -100%;
+                text-align: center;
+                transition: all 0.3s;
+            }
+            .nav-links ul li {
+                margin: 50px 0;
+            }
+            .fa-bars {
+                display: block;
+            }
+            .nav-links.show {
+                right: 0;
+            }
+            .fa-close {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 30px;
+            }
+        }
     </style>
 </head>
 <body>
     <section class="header">
         <nav>
-            <a href="index.html"><img src="logoprorou.PNG" class="logo"></a>
-            <div class="nav-links" id="navLinks">  
+            <a href="projectroulette.html"><img src="logoprorou.PNG" class="logo"></a>
+            <div class="nav-links" id="navLinks">
                 <i class="fa fa-close" onclick="hideMenu()"></i>
                 <ul>
                     <li><a href="projectroulette.html">HOME</a></li>
@@ -174,20 +200,7 @@
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
         <div class="text-box">
-            <br>
-            <br>
-            <br>
-            <br>
             <h1>Coming Soon...</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
             <div class="launch-time">
                 <div>
                     <p id="Tage">00</p>
@@ -206,18 +219,14 @@
                     <span>Sekunden</span>
                 </div>
             </div>
-            
         </div>
     </section>
 
     <section class="course">
         <h1>WILLKOMMEN, Agent</h1>
         <p>Ihre Mission, sollten Sie sich entscheiden, sie anzunehmen: Infiltrieren Sie &quot;Project Roulette&quot;, den geheimnisumwobenen Abend an der Technischen Hochschule Georg Simon Ohm. Erwarten Sie eine Nacht voller R&auml;tsel und Herausforderungen, die Ihre F&auml;higkeiten auf die Probe stellen.</p>
-        <br>
         <p>Ausr&uuml;stung: Scharfsinn, Verkleidung nach Wahl, und der Wille, das Unbekannte zu erkunden. Ihre Aufgabe: Codes knacken, Verb&uuml;ndete finden und die versteckten Botschaften entschl&uuml;sseln, die &uuml;ber den Abend verteilt sein werden.</p>
-        <br>
         <p>Details der Operation werden bei Ihrer Ankunft offenbart. Bereiten Sie sich auf eine Erfahrung vor, die ebenso spannend wie unterhaltsam ist. Dies ist keine gew&ouml;hnliche Veranstaltung. Es ist ein Spiel der Schatten und Lichter, bei dem nur die Geschicktesten triumphieren werden.</p>
-        <br>
         <p>Viel Gl&uuml;ck, Agent. Dies k&ouml;nnte Ihr gr&ouml;ßtes Abenteuer werden.</p>
     </section>
     
@@ -275,7 +284,6 @@
         </div>
     </section>
 
-   
     <section class="campus">
         <h1>Die MAP</h1>
         <div class="row">
@@ -291,13 +299,9 @@
         </div>
     </section>
 
- 
-
     <section class="footer">
         <h4>Du kannst uns hier finden</h4>
-        
         <div class="icons">
-  
             <a href="https://www.instagram.com/project_._roulette?igsh=MWxpcHRqemh5enk3eQ=="><i class="fa fa-instagram"></i></a>
             <a href="https://www.instagram.com/project_._roulette?igsh=MWxpcHRqemh5enk3eQ=="><i class="fa fa-linkedin"></i></a>
         </div>
@@ -307,11 +311,11 @@
         var navLinks = document.getElementById("navLinks");
 
         function showMenu() {
-            navLinks.style.right = "0";
+            navLinks.style.right='0';
         }
 
         function hideMenu() {
-            navLinks.style.right = "-200px";
+            navLinks.style.right='-200px';
         }
 
         var countDownDate = new Date("Jul 17, 2024 00:00:00").getTime();
