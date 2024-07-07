@@ -1,369 +1,78 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Roulette</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Source Code Pro', monospace;
-            margin: 0;
-            padding: 0;
-            background: #000000;
-            color: white;
-        }
-        .header {
-            background: url(images/header-bg.jpg) no-repeat center center/cover;
-            height: 100vh;
-            width: 100%;
-            position: relative;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #333;
-        }
-        .nav-links {
-            flex: 1;
-            text-align: right;
-        }
-        .nav-links ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: flex-end;
-        }
-        .nav-links ul li {
-            margin: 0 10px;
-        }
-        .nav-links ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 16px;
-        }
-        .nav-links ul li a:hover {
-            color: #dedede;
-        }
-        .fa-bars, .fa-close {
-            color: #fff;
-            font-size: 20px;
-            cursor: pointer;
-            display: none;
-        }
-        .text-box {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            text-align: center;
-        }
-        .hero-btn {
-            display: inline-block;
-            text-decoration: none;
-            color: #fff;
-            background: #4CAF50;
-            padding: 10px 25px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .hero-btn:hover {
-            background: #45a049;
-        }
-        .container {
-            text-align: center;
-            padding: 60px 20px;
-        }
-        .launch-time {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .launch-time div {
-            background: #333;
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .launch-time p {
-            margin: 0;
-            font-size: 2em;
-        }
-        .launch-time span {
-            display: block;
-        }
-        .course, .campus, .facility, .testimonials, .cta, .footer {
-            padding: 50px 0;
-            text-align: center;
-        }
-        .course h1, .campus h1, .facility h1, .testimonials h1, .cta h1, .footer h4 {
-            margin-bottom: 20px;
-        }
-        .course .row, .campus .row, .facility .row, .testimonials .row {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .course-col, .campus-col, .facility-col, .testimonial-col {
-            flex-basis: 30%;
-            margin: 10px;
-        }
-        .course-col h3, .campus-col h3, .facility-col h3, .testimonial-col h3 {
-            margin: 10px 0;
-        }
-        .course-col p, .facility-col p, .testimonial-col p {
-            color: #ddd;
-        }
-        .campus-col img, .facility-col img, .testimonial-col img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .campus-col .layer, .facility-col .layer {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .campus-col:hover .layer, .facility-col:hover .layer {
-            opacity: 1;
-        }
-        .footer {
-            background: #333;
-            color: #fff;
-        }
-        .footer .icons a {
-            color: #fff;
-            margin: 0 10px;
-        }
-        .footer .icons a:hover {
-            color: #4CAF50;
-        }
-        @media (max-width: 768px) {
-            .nav-links ul {
-                flex-direction: column;
-                position: fixed;
-                background: #333;
-                width: 100%;
-                height: 100vh;
-                top: 0;
-                right: -100%;
-                text-align: center;
-                transition: all 0.3s;
-            }
-            .nav-links ul li {
-                margin: 50px 0;
-            }
-            .fa-bars {
-                display: block;
-            }
-            .nav-links.show {
-                right: 0;
-            }
-            .fa-close {
-                display: block;
-                position: absolute;
-                top: 20px;
-                right: 30px;
-            }
-        }
-    </style>
+    <link href="stylee.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="header">
-        <nav>
-            <a href="projectroulette.html"><img src="logoprorou.PNG" class="logo"></a>
-            <div class="nav-links" id="navLinks">
-                <i class="fa fa-close" onclick="hideMenu()"></i>
-                <ul>
-                    <li><a href="projectroulette.html">HOME</a></li>
-                    <li><a href="uf.html">&Uuml;ber uns</a></li>
-                    <li><a href="uf.html">Projekte</a></li>
-                    <li><a href="uf.html">Kontakt</a></li>
-                </ul>
-            </div>
-            
-        </nav>
-        <div class="text-box">
-            <h1>Coming Soon...</h1>
-            <br>
-            <br>
-            <br>
-        
-            <div class="launch-time">
-                <div>
-                    <p id="Tage">00</p>
-                    <span>Tage</span>
-                </div>
-                <div>
-                    <p id="Stunden">00</p>
-                    <span>Stunden</span>
-                </div>
-                <div>
-                    <p id="Minuten">00</p>
-                    <span>Minuten</span>
-                </div>
-                <div>
-                    <p id="Sekunden">00</p>
-                    <span>Sekunden</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="course">
-        <h1>WILLKOMMEN, Agent</h1>
-        <p>Ihre Mission, sollten Sie sich entscheiden, sie anzunehmen: Infiltrieren Sie &quot;Project Roulette&quot;, den geheimnisumwobenen Abend an der Technischen Hochschule Georg Simon Ohm. Erwarten Sie eine Nacht voller R&auml;tsel und Herausforderungen, die Ihre F&auml;higkeiten auf die Probe stellen.</p>
-        <p>Ausr&uuml;stung: Scharfsinn, Verkleidung nach Wahl, und der Wille, das Unbekannte zu erkunden. Ihre Aufgabe: Codes knacken, Verb&uuml;ndete finden und die versteckten Botschaften entschl&uuml;sseln, die &uuml;ber den Abend verteilt sein werden.</p>
-        <p>Details der Operation werden bei Ihrer Ankunft offenbart. Bereiten Sie sich auf eine Erfahrung vor, die ebenso spannend wie unterhaltsam ist. Dies ist keine gew&ouml;hnliche Veranstaltung. Es ist ein Spiel der Schatten und Lichter, bei dem nur die Geschicktesten triumphieren werden.</p>
-        <p>Viel Gl&uuml;ck, Agent. Dies k&ouml;nnte Ihr gr&ouml;ßtes Abenteuer werden.</p>
-    </section>
+    <div class="topnav">
+        <img src="logo Kopie.png" class="logo">
+        <a href="message.html"> ? </a>
+      </div>
+<div class="container">
     
-    <section class="campus">
-        <h1>UNSERE PROJEKTE</h1>
-     <a href="https://www.instagram.com/community_map?igsh=MTQ2MDNleTgwdm5leQ=="><div class="row">
-            <div class="campus-col">
-                <img src="CM.JPEG" alt="Community Map">
-                <div class="layer">
-                    <h3>Community Map</h3>
-                </div></a>
-            </div>
-            <a href="https://www.instagram.com/crazycatsgame?igsh=MTN3OWJyMTQ1c2djdA==">
-            <div class="campus-col">
-                <img src="CC.JPEG" alt="Crazy Cats"></a>
-                <div class="layer">
-                    <h3>Crazy Cats</h3>
-                </div></a>
-            </div>
-            <a href="https://www.instagram.com/altek_nuernberg?igsh=MXF4cjkwanZ2aW1hbA==">
-            <div class="campus-col">
-                <img src="A.JPEG" alt="ALTEK"></a>
-                <div class="layer">
-                    <h3>ALTEK</h3>
-                </div> </a>
-            </div>
-            <a href="https://www.instagram.com/baikerevolution?igsh=MW43N25lamJ2ajFqeQ==">
-            <div class="campus-col">
-                <img src="B.JPEG" alt="BAIKE">
-                <div class="layer">
-                    <h3>BAIKE</h3>
-                </div></a>
-            </div>
-            <a href="https://www.instagram.com/droneverse_th_ohm?igsh=ZWVwenZidDAwaXdl">
-            <div class="campus-col">
-                <img src="DV.JPEG" alt="DRONEVERSE">
-                <div class="layer">
-                    <h3>DRONEVERSE</h3>
-                </div></a>
-            </div>
-            <a href="https://www.instagram.com/postk.ar.te?igsh=aDZzaXJpNGs4cGR5">
-            <div class="campus-col">
-                <img src="PK.JPEG" alt="PostkARte">
-                <div class="layer">
-                    <h3>PostkARte</h3>
-                </div></a>
-            </div>
-            <a href="https://www.instagram.com/redrum.gpt?igsh=ODFwbnBiZzM4MDZv">
-            <div class="campus-col">
-                <img src="RR.JPEG" alt="REDRUM">
-                <div class="layer">
-                    <h3>REDRUM</h3>
-                </div></a>
-            </div>
-            <a href="https://www.instagram.com/theriseoflerak?igsh=c2Z6aTZzMmN5ZDd1">
-            <div class="campus-col">
-                <img src="TROLR.JPEG" alt="The Rise of LeRak">
-                <div class="layer">
-                    <h3>The Rise of LeRak</h3> 
-                </div></a>
-            </div>
-        </div>
-    </section>
 
-    <section class="campus">
-        <h1>Die MAP</h1>
-        <div class="row">
-            <div class="campus-col">
-                <a href="erdgeschoss.html"><img src="EE.png" alt="Erdgeschoss"></a>
+    <div class="content">
+        <p class="content">CONFIDENTIAL</p>
+        <h1 class="source-code-pro">Coming Soon</h1>
+        <div class="launch-time">
+           
+            <div>
+                <p id="Tage">00</p>
+                <span>Tage</span>            </div>
+            <div>
+                <p id="Stunden">00</p>
+                <span>Stunden</span>
             </div>
-            <br>
-            <div class="campus-col">
-                <a href="erstesstock.html"><img src="e1.png" alt="Erster Stock"></a>
+            <div>
+                <p id="Minuten">00</p>
+                <span>Minuten</span>
             </div>
-            <br>
-            <div class="campus-col">
-                <a href="zweitesstock.html"><img src="e2.png" alt="Zweites Stock"></a>
+            <div>
+                <p id="Sekunden">00</p>
+                <span>Seconds</span>
             </div>
-        </div>
-    </section>
-    <section class="campus">
-    <section class="location">
-        <h1>STANDORT</h1>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5187.83395206867!2d11.094092439542525!3d49.448286171537106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f579c1869b013%3A0x5fa0b290ae94a51d!2sTechnische%20Hochschule%20N%C3%BCrnberg%20Georg%20Simon%20Ohm%20%7C%20Standort%20BB!5e0!3m2!1sde!2sde!4v1720362584136!5m2!1sde!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</section></section>
+        </div> 
+     
+    </div>
+    
+  
+</div>
 
-<section class="contact-us">
+<script>
+    var countDownDate = new Date("Jul 17, 2024 00:00:00").getTime();
+    var x = setInterval(function(){
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
 
-    <section class="footer">
-        <h4>Du kannst uns hier finden</h4>
-        <div class="icons">
-            <a href="https://www.instagram.com/project_._roulette?igsh=MWxpcHRqemh5enk3eQ=="><iMG src="icons8-instagram-50.png"></a>
-        </div>
-    </section>
+        var Tage = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var Stunden = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var Minuten = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var Sekunden = Math.floor((distance % (1000 * 60)) / 1000);
 
-    <script>
-        var navLinks = document.getElementById("navLinks");
+        document.getElementById("Tage").innerHTML = Tage;
+        document.getElementById("Stunden").innerHTML = Stunden;
+        document.getElementById("Minuten").innerHTML = Minuten;
+        document.getElementById("Sekunden").innerHTML = Sekunden;
 
-        function showMenu() {
-            navLinks.style.right='0';
+        if(distance < 0){
+            clearInterval(x);
+            document.getElementById("Tage").innerHTML = "00";
+            document.getElementById("Stunden").innerHTML = "00";
+            document.getElementById("Minuten").innerHTML = "00";
+            document.getElementById("Sekunden").innerHTML = "00";
         }
 
-        function hideMenu() {
-            navLinks.style.right='-200px';
-        }
+    },1000);
+</script>
 
-        var countDownDate = new Date("Jul 31, 2024 00:00:00").getTime();
-        var x = setInterval(function(){
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
+    <a href="zweitesstock.html">zweitesstock</a>
+<a href="erstesstock.html">ersterstock</a>
 
-            var Tage = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var Stunden = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var Minuten = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var Sekunden = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("Tage").innerHTML = Tage;
-            document.getElementById("Stunden").innerHTML = Stunden;
-            document.getElementById("Minuten").innerHTML = Minuten;
-            document.getElementById("Sekunden").innerHTML = Sekunden;
-
-            if(distance < 0){
-                clearInterval(x);
-                document.getElementById("Tage").innerHTML = "00";
-                document.getElementById("Stunden").innerHTML = "00";
-                document.getElementById("Minuten").innerHTML = "00";
-                document.getElementById("Sekunden").innerHTML = "00";
-            }
-
-        },1000);
-    </script>
+    <a href="erdgeschoss.html">erdgeschoss</a>
 </body>
 </html>
-
-
-

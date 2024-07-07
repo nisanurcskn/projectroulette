@@ -205,30 +205,33 @@
             });
         });
 
-        // Profilbilder für die Räume positionieren
-        const profileImages = [
-            { img: document.getElementById('profilbild_bb_202'), room: document.getElementById('bb_202') },
-            { img: document.getElementById('profilbild_bb_203'), room: document.getElementById('bb_203') },
-            { img: document.getElementById('profilbild_bb_209'), room: document.getElementById('bb_209') },
-            { img: document.getElementById('profilbild_bb_210'), room: document.getElementById('bb_210') },
-            { img: document.getElementById('profilbild_bb_211'), room: document.getElementById('bb_211') },
-        ];
+        function positionProfileImage(profileImgId, roomId, offsetX = 0, offsetY = 0) {
+            const profileImg = document.getElementById(profileImgId);
+            const room = document.getElementById(roomId);
 
-        function positionProfileImages() {
-            profileImages.forEach(({ img, room }) => {
+            if (profileImg && room) {
                 const roomRect = room.getBoundingClientRect();
                 const mapContainerRect = document.getElementById('map-container').getBoundingClientRect();
 
                 // Position des Profilbilds relativ zum Raum
-                img.style.top = `${roomRect.top - mapContainerRect.top + window.scrollY + roomRect.height / 0.4 - img.offsetHeight / 0.4}px`;
-                img.style.left = `${roomRect.left - mapContainerRect.left + window.scrollX + roomRect.width / 2 - img.offsetWidth / 2}px`;
-            });
+                profileImg.style.top = `${roomRect.top - mapContainerRect.top + window.scrollY + offsetY}px`;
+                profileImg.style.left = `${roomRect.left - mapContainerRect.left + window.scrollX + offsetX}px`;
+            }
+        }
+
+        function positionAllProfileImages() {
+            positionProfileImage('profilbild_bb_202', 'bb_202', 10, 0);
+            positionProfileImage('profilbild_bb_203', 'bb_203', 20, -10);
+            positionProfileImage('profilbild_bb_209', 'bb_209', -10, 10);
+            positionProfileImage('profilbild_bb_210', 'bb_210', 15, -15);
+            positionProfileImage('profilbild_bb_211', 'bb_211', 0, 0);
         }
 
         // Bilder nach dem Laden positionieren
-        window.addEventListener('load', positionProfileImages);
+        window.addEventListener('load', positionAllProfileImages);
         // Bilder neu positionieren, wenn die Seite skaliert oder die Fenstergröße geändert wird
-        window.addEventListener('resize', positionProfileImages);
+        window.addEventListener('resize', positionAllProfileImages);
     </script>
+
 </body>
 </html>
