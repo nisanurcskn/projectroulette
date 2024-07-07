@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'SourceCodePro.ttf', mo;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 
 
@@ -13,6 +13,9 @@
     background-size: cover;
     position: relative;
     overflow: hidden;
+    font-family: 'SourceCodePro.ttf', monospace;
+    
+
 }
 
 nav{
@@ -20,6 +23,7 @@ nav{
     padding: 2% 4%;
     justify-content: space-between;
     align-items: center;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 nav img{
     width: 135px;
@@ -27,32 +31,38 @@ nav img{
 .nav-links{
     flex: 1;
     text-align: right;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 .nav-links ul li{
     list-style: none;
     display: inline-block;
     padding: 8px 12px;
     position: relative;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 .nav-links ul li a{
     color: #fff;
     text-decoration: none;
     font-size: 13px;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 .nav-links ul li::after{
     content: '';
     width: 0%;
     height: 2px;
-    background: #f44336;
+    background: #dedede;
     display: block;
     margin: auto;
-    transition: .5s;    
+    transition: .5s;  
+    font-family: 'SourceCodePro.ttf', monospace;  
 }
 .nav-links ul li:hover::after{
     width: 100%;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 nav .fa{
     display: none;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 
 .text-box{
@@ -63,20 +73,24 @@ nav .fa{
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 .text-box h1{
     font-size: 62px;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 .text-box p{
     margin: 20px 0 40px;
     font-size: 14px;
     color: #fff;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 .hero-btn {
     display: inline-block;
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
+    font-family: 'SourceCodePro.ttf', monospace;
     padding: 12px 34px;
     font-size: 13px;
     background: transparent;
@@ -86,8 +100,9 @@ nav .fa{
 }
 
 .hero-btn:hover{
-    border: 1px solid #f44336;
-    background: #f44336;
+    border: 1px solid #dedede;
+    background: #dedede;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 
 
@@ -100,27 +115,31 @@ nav .fa{
     .nav-links
     {
         position: fixed;
-        background: #f44336;
+        background: #dedede;
         height: 100vh;
         width: 200px;
         top: 0;
         right: -200px;
         text-align: left;
+        font-family: 'SourceCodePro.ttf', monospace;
         z-index: 2;
         transition: 0.5s;
     }
     .nav-links ul{
         padding: 30px;
+        font-family: 'SourceCodePro.ttf', monospace;
     }
     nav .fa{
         display: block;
         color: #fff;
         margin: 10px;
+        font-family: 'SourceCodePro.ttf', monospace;
         font-size: 22px;
         cursor: pointer; 
     }
     .text-box h1{
         font-size: 20px;
+        font-family: 'SourceCodePro.ttf', monospace;
     }
 }
 
@@ -135,10 +154,12 @@ nav .fa{
 h1{
     font-size: 36px;
     font-weight: 600;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 p{
     color: #777;
     font-size: 14px;
+    font-family: 'SourceCodePro.ttf', monospace;
     font-weight: 300;
     line-height: 22px;
     padding: 10px;
@@ -162,14 +183,17 @@ h3{
     text-align: center;
     font-weight: 600;
     margin: 10px 0;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 .course-col:hover{
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 
 @media (max-width:700px){
     .row{
         flex-direction: column;
+        font-family: 'SourceCodePro.ttf', monospace;
     }
 } 
 
@@ -178,18 +202,21 @@ h3{
 .campus{
     width: 80%;
     margin: auto;
+    font-family: 'SourceCodePro.ttf', monospace;
     text-align: center;
     padding-top: 50px;
 }
 .campus-col{
     flex-basis: 32%;
     border-radius: 10px;
+    font-family: 'SourceCodePro.ttf', monospace;
     margin-bottom: 30px;
     position: relative;
     overflow: hidden;
 }
 .campus-col img{
     width: 100%;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 
 .layer{
@@ -211,6 +238,7 @@ h3{
     font-size: 14px;
     bottom: 0;
     left: 50%;
+    font-family: 'SourceCodePro.ttf', monospace;
     transform: translateX(-50%);
     position: absolute;
     opacity: 0;
@@ -226,6 +254,7 @@ h3{
 .facility{
     width: 80%;
     margin: auto;
+    font-family: 'SourceCodePro.ttf', monospace;
     text-align: center;
     padding-top: 100px;
 }
@@ -234,6 +263,7 @@ h3{
     border-radius: 10px;
     margin-bottom: 5%;
     text-align: left;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 .facility-col img{
     width: 100%;
@@ -245,6 +275,7 @@ h3{
 .facility-col h3{
     margin-top: 16px;
     margin-bottom: 15px;
+    font-family: 'SourceCodePro.ttf', monospace;
     text-align: left;
 }
 
@@ -255,6 +286,7 @@ h3{
     margin: auto;
     padding-top: 100px;
     text-align: center;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 
 .testimonial-col{
@@ -262,6 +294,7 @@ h3{
     border-radius: 10px;
     margin-bottom: 5%;
     text-align: left;
+    font-family: 'SourceCodePro.ttf', monospace;
     background: #fff3f3;
     padding: 25px;
     cursor: pointer;
@@ -279,6 +312,7 @@ h3{
 .testimonial-col h3{
     margin-top: 15px;
     text-align: left;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 .testimonial-col .fa{
     color: #f44336;
@@ -301,11 +335,13 @@ h3{
     background-position: center;
     background-size: cover;
     border-radius: 10px;
+    font-family: 'SourceCodePro.ttf', monospace;
     text-align: center;
     padding: 100px 0;
 }
 .cta h1{
     color: #fff;
+    font-family: 'SourceCodePro.ttf', monospace;
     margin-bottom: 40px; 
     padding: 0; 
 }
@@ -313,6 +349,7 @@ h3{
 @media(max-width:700px){
     .cta h1{
         font-size: 24px;
+        font-family: 'SourceCodePro.ttf', monospace;
     }
 }
 
@@ -320,6 +357,7 @@ h3{
 
 .footer{
     width: 100%;
+    font-family: 'SourceCodePro.ttf', monospace;
     text-align: center;
     padding: 30px 0;
 }
@@ -327,11 +365,13 @@ h3{
     margin-bottom: 25px;
     margin-top: 20px;
     font-weight: 600;
+    font-family: 'SourceCodePro.ttf', monospace;
 }
 
 .icons .fa{
     color: #f44336;
     margin: 0 13px;
+    font-family: 'SourceCodePro.ttf', monospace;
     cursor: pointer;
     padding: 18px 0;
 }
@@ -349,6 +389,7 @@ h3{
     background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/background.jpg);
     background-position: center;
     background-size: cover;
+    font-family: 'SourceCodePro.ttf', monospace;
     text-align: center;
     color: #fff;
 }
@@ -447,6 +488,7 @@ h3{
 
 .comment-box h3{
     text-align: left;
+    font-family: 'SourceCodePro.ttf', monospace;
     font-family: 'SourceCodePro.tff', monospace;
 }
 .comment-form input, .comment-form textarea{
