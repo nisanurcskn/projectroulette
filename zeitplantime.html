@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Zeitplan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            position: relative;
+        }
+        th, td {
+            border: 1px solid white;
+            padding: 10px;
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+
+        }
+        .time-separator {
+            position: absolute;
+            left: 0;
+            right: 0;
+            border-top: 2px solid red;
+            z-index: 1;
+        }
+        .table-container {
+            position: relative;
+        }
+        tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="table-container">
+        <div class="time-separator" id="timeSeparator"></div>
+        <table>
+            <tr> th>Zeit</th>
+                <th>Programmpunkt</th>
+                <th>Präsentator</th>
+                <th>Thema</th>
+                
+        
+            <tr>
+                <td>12:45-12:55 Uhr</td>
+                <td>Vor-Begrüßung</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>12:55-13:15 Uhr</td>
+                <td>Vortrag</td>
+                <td>Artur Müller</td>
+                <td>Gaming Industrie in Deutschland</td>
+            </tr>
+            <tr>
+                <td>13:20-13:40 Uhr</td>
+                <td>Vortrag</td>
+                <td>Till Smolinski</td>
+                <td>Monetarisierung von Games</td>
+               
+            </tr>
+            <tr>
+                <td>13:40-14:45 Uhr</td>
+                <td>Pause</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>14:45-15:05 Uhr</td>
+                <td>Vortrag</td>
+                <td>Muhammed Apaydin</td>
+                <td>Online Glückspiel</td>
+            </tr>
+            <tr>
+                <td>15:10-15:30 Uhr</td>
+                <td>Vortrag</td>
+                <td>Justus Görgens</td>
+                <td>Spielsucht</td>
+            </tr>
+            <tr>
+                <td>15:30-16:15 Uhr</td>
+                <td>Pause</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>16:15-16:35 Uhr</td>
+                <td>Vortrag</td>
+                <td>Daniel Manin</td>
+                <td>Jugendschutz beim Gaming</td>
+            </tr>
+            <tr>
+                <td>16:40-17:00 Uhr</td>
+                <td>Vortrag</td>
+                <td>Lilly Manitz</td>
+                <td>Diversity in der Gaming Industry</td>
+            </tr>
+         
+
+        </table>
+        
+    </div>
+    
+</body>
+</html>

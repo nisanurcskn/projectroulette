@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Zeitplan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            position: relative;
+        }
+        th, td {
+            border: 1px solid white;
+            padding: 10px;
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+
+        }
+        .time-separator {
+            position: absolute;
+            left: 0;
+            right: 0;
+            border-top: 2px solid red;
+            z-index: 1;
+        }
+        .table-container {
+            position: relative;
+        }
+        tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="table-container">
+        <div class="time-separator" id="timeSeparator"></div>
+        <table>
+            <tr>
+                <th>Zeit</th>
+                <th>Programmpunkt</th>
+                <th>Gruppe 1</th>
+                <th>Gruppe 2</th>
+                
+            </tr>
+           
+
+            </tr>
+        
+            <tr>
+                <td>14:00-14:10 Uhr</td>
+                <td>Begrüßung</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>14:10-14:45 Uhr</td>
+                <td>Pitches</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>14:45-15:00 Uhr</td>
+                <td>Präsentation</td>
+                <td>Community Map</td>
+                <td>Red Rum</td>
+               
+            </tr>
+            <tr>
+                <td>15:00-15:15 Uhr</td>
+                <td>Präsentation</td>
+                <td>BAIKE</td>
+                <td>postkARte</td>
+            </tr>
+            </tr>
+            <tr>
+                <td>15:15-15:30 Uhr</td>
+                <td>Präsentation</td>
+                <td>ALTEK</td>
+                <td>Crazy Cats</td>
+            </tr>
+            <tr>
+                <td>15:30-15:45 Uhr</td>
+                <td>Präsentation</td>
+                <td>Droneverse</td>
+                <td>Community Map</td>
+            </tr>
+            <tr>
+                <td>15:45-16:00 Uhr</td>
+                <td>Präsentation</td>
+                <td>BAIKE</td>
+                <td>Red Rum</td>
+            </tr>
+            <tr>
+                <td>16:00-16:15 Uhr</td>
+                <td>Präsentation</td>
+                <td>The Rise of LeRak</td>
+                <td>postkARte</td>
+            </tr>
+            <tr>
+                <td>16:15-16:30 Uhr</td>
+                <td>Präsentation</td>
+                <td>Crazy Cats</td>
+                <td>The Rise of LeRak</td>
+            </tr>
+            <tr>
+                <td>16:30-16:45 Uhr</td>
+                <td>Präsentation</td>
+                <td>Red Rum</td>
+                <td>ALTEK</td>
+            </tr>
+            <tr>
+                <td>16:45-17:00 Uhr</td>
+                <td>Präsentation</td>
+                <td>postkARte</td>
+                <td>Droneverse</td>
+            </tr>
+            <tr>
+                <td>17:00-17:15 Uhr</td>
+                <td>Präsentation</td>
+                <td>The Rise of LeRak</td>
+                <td>ALTEK</td>
+            </tr>
+            <tr>
+                <td>17:15-17:30 Uhr</td>
+                <td>Präsentation</td>
+                <td>BAIKE</td>
+                <td>Community Map</td>
+            </tr>
+            <tr>
+                <td>17:30-17:45 Uhr</td>
+                <td>Präsentation</td>
+                <td>Droneverse</td>
+                <td>Crazy Cats</td>
+            </tr>
+            <tr>
+                <td>17:45-18:00 Uhr</td>
+                <td>Auswertung des Gewinnspiels</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ab 18:00 Uhr</td>
+                <td>PARTY</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+    </div>
+    <script>
+        function updateTimeSeparator() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const totalMinutes = hours * 60 + minutes;
+
+            const startMinutes = 14 * 60; // Startzeit: 14:00 Uhr
+            const endMinutes = 18 * 60 // 18: Uhr
+
+            const totalEventMinutes = endMinutes - startMinutes;
+            const passedEventMinutes = totalMinutes - startMinutes;
+
+            const tableHeight = document.querySelector('.table-container').offsetHeight;
+            const position = (passedEventMinutes / totalEventMinutes) * tableHeight;
+
+            const timeSeparator = document.getElementById('timeSeparator');
+            timeSeparator.style.top = position + 'px';
+        }
+
+        // Initiales Update
+        updateTimeSeparator();
+
+        // Update jede Minute
+        setInterval(updateTimeSeparator, 60000);
+    </script>
+</body>
+</html>
