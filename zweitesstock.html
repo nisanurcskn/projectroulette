@@ -39,7 +39,7 @@
         }
 
         .floating-image {
-            position: absolute;
+            position: fixed;
             width: 25px;
             /* Anpassbare Größe des Profilbilds */
             height: 25px;
@@ -256,15 +256,13 @@
     
     <script>
         function positionProfileImage(profileImgId, roomId, offsetX = 0, offsetY = 0) {
-            const profileImg = document.getElementById(profileImgId);
-            const room = document.getElementById(roomId);
-            const roomRect = room.getBoundingClientRect();
-            const mapContainerRect = document.getElementById('map-container').getBoundingClientRect();
+    const profileImg = document.getElementById(profileImgId);
+    const room = document.getElementById(roomId);
+    const roomRect = room.getBoundingClientRect();
 
-            profileImg.style.top = `${roomRect.top - mapContainerRect.top + window.scrollY + offsetY}px`;
-            profileImg.style.left = `${roomRect.left - mapContainerRect.left + window.scrollX + roomRect.width + offsetX}px`;
-        }
-
+    profileImg.style.top = `${roomRect.top + window.scrollY + offsetY}px`;
+    profileImg.style.left = `${roomRect.left + window.scrollX + roomRect.width + offsetX}px`;
+}
         function positionAllProfileImages() {
             positionProfileImage('profilbild_bb_202', 'bb_202', -50, 30);
             positionProfileImage('profilbild_bb_203', 'bb_203', -50, 30);
