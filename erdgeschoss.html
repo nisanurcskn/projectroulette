@@ -1,4 +1,4 @@
-      <!DOCTYPE html>
+     <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <style>
         body {
             background-color: black;
+            
         }
 
         svg {
@@ -38,7 +39,7 @@
         }
 
         .floating-image {
-            position: fixed;
+            position: absolute;
             width: 25px;
             /* Anpassbare Größe des Profilbilds */
             height: 25px;
@@ -47,21 +48,7 @@
             animation: float 3s ease-in-out infinite;
         }
 
-        @keyframes float {
-            0% {
-                box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-                transform: translateY(0px);
-            }
-
-            50% {
-                box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
-                transform: translateY(-10px);
-            }
-
-            100% {
-                box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-                transform: translateY(0px);
-            }
+        
         }
     </style>
 </head>
@@ -201,21 +188,22 @@
     </div>
 
     <img src="droneverse.PNG" alt="Profilbild" class="floating-image" id="profilbild_bb_008">
-   
+    <img src="communitymap.png" alt="Profilbild" class="floating-image" id="profilbild_bb_002">
 
     <script>
-      function positionProfileImage(profileImgId, roomId, offsetX = 0, offsetY = 0) {
-    const profileImg = document.getElementById(profileImgId);
-    const room = document.getElementById(roomId);
-    const roomRect = room.getBoundingClientRect();
+        function positionProfileImage(profileImgId, roomId, offsetX = 0, offsetY = 0) {
+            const profileImg = document.getElementById(profileImgId);
+            const room = document.getElementById(roomId);
+            const roomRect = room.getBoundingClientRect();
+            const mapContainerRect = document.getElementById('map-container').getBoundingClientRect();
 
-    profileImg.style.top = `${roomRect.top + window.scrollY + offsetY}px`;
-    profileImg.style.left = `${roomRect.left + window.scrollX + roomRect.width + offsetX}px`;
+            profileImg.style.top = `${roomRect.top - mapContainerRect.top + window.scrollY + offsetY}px`;
+            profileImg.style.left = `${roomRect.left - mapContainerRect.left + window.scrollX + roomRect.width + offsetX}px`;
+        }
 
         function positionAllProfileImages() {
-            positionProfileImage('profilbild_bb_008', 'bb_008', -50, 75);
-      
-        }
+            positionProfileImage('profilbild_bb_008', 'bb_008', -50, 30);
+            positionProfileImage('profilbild_bb_002', 'bb_002', -50, 30);
             
         }
 
