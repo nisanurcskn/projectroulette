@@ -94,7 +94,7 @@
                 </style>
             </defs>
 
-            <!-- Hier werden die Räume eingefügt -->
+            
             <a href="uf.html"><path class="cls-1" d="m834.17,0.55c-278.05,27.86 -556.11,55.72 -834.17,83.58c13.88,103.22 27.76,206.44 41.64,309.66c263.33,2.33 526.67,4.67 790,7c0.84,-133.41 1.68,-266.82 2.53,-400.23l0,-0.01z"
                 id="svg_1" transform="matrix(1 0 0 1 0 0)" /></a>
                 <a href="uf.html"><path class="cls-4" d="m834.17,0c-278.06,27.86 -556.11,55.72 -834.17,83.58c13.88,103.22 27.76,206.44 41.64,309.66c263.33,2.33 526.67,4.67 790,7c0.84,-133.41 1.68,-266.82 2.53,-400.23l0,-0.01z"
@@ -250,17 +250,17 @@
     profileImg.style.left = `${roomRect.left + window.scrollX + roomRect.width + offsetX}px`;
 }
         function positionAllProfileImages() {
-            positionProfileImage('profilbild_bb_202', 'bb_202', -50, 30);
-            positionProfileImage('profilbild_bb_203', 'bb_203', -50, 30);
-            positionProfileImage('profilbild_bb_209', 'bb_209', -50, 30);
-            positionProfileImage('profilbild_bb_210', 'bb_210', -50, 30);
-            positionProfileImage('profilbild_bb_211', 'bb_211', -50, 30);
+            positionProfileImage('profilbild_bb_202', 'bb_202', -50, -5);
+            positionProfileImage('profilbild_bb_203', 'bb_203', -50, -5);
+            positionProfileImage('profilbild_bb_209', 'bb_209', -50, 10);
+            positionProfileImage('profilbild_bb_210', 'bb_210', -50, 10);
+            positionProfileImage('profilbild_bb_211', 'bb_211', -50, 10);
            
         }
 
-        // Bilder nach dem Laden positionieren
+        
         window.addEventListener('load', positionAllProfileImages);
-        // Bilder neu positionieren, wenn die Seite skaliert oder die Fenstergröße geändert wird
+       
         window.addEventListener('resize', positionAllProfileImages);
     </script>
 </body>
